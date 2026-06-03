@@ -1,0 +1,20 @@
+[
+  {
+    "time": "2026-06-03T16:53:14.407268",
+    "data": {
+      "event": {
+        "user_id": "admin",
+        "event_type": "LOGIN_FAILURE",
+        "ip_address": "8.8.8.8"
+      },
+      "risk": 46.09,
+      "correlation": "NORMAL (T1110 Brute Force)",
+      "response": {
+        "decision": "ESCALATE",
+        "actions": [],
+        "blocked_ips": [],
+        "quarantined_users": []
+      }
+    }
+  }
+]
