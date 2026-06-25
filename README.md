@@ -98,19 +98,20 @@ Example Response:
 
 ---
 
-# Screenshots
 
-## Live SOC Dashboard
+## Screenshots
 
-![Dashboard](screenshots/dashboard.png)
+### Live SOC Dashboard
 
-## Attack Graph Visualization
+![Dashboard](screenshots/Screenshot%202026-06-24%20161937.png)
 
-![Graph](screenshots/attack-graph.png)
+### Threat Detection API
 
-## Threat Detection API
+![API](screenshots/Screenshot%202026-06-24%20162010.png)
 
-![API](screenshots/api-test.png)
+### Attack Graph Visualization
+
+![Graph](screenshots/Screenshot%202026-06-24%20162046.png)
 
 ---
 
