@@ -270,6 +270,5 @@ https://www.linkedin.com/in/igboanugo-david-ugochukwu-73136220b
 
 ---
 
-## License
 
 MIT License
