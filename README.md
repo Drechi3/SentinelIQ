@@ -1,83 +1,107 @@
-# 🛡️ SentinelIQ — Autonomous SOC Intelligence Engine
+# 🛡️ SentinelIQ — Autonomous SOC Intelligence Platform
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-Live-green)
-![Docker](https://img.shields.io/badge/Docker-Ready-blue)
-![MITRE ATT%26CK](https://img.shields.io/badge/MITRE-ATT%26CK-red)
+![Docker](https://img.shields.io/badge/Docker-Enabled-blue)
+![MITRE ATT\&CK](https://img.shields.io/badge/MITRE-ATT%26CK-red)
 
 ## Overview
 
-SentinelIQ is an autonomous Security Operations Center (SOC) intelligence platform that performs real-time threat detection, attack correlation, risk scoring, attack graph generation, and automated incident response.
+SentinelIQ is an autonomous Security Operations Center (SOC) intelligence platform that performs real-time threat detection, attack correlation, UEBA risk scoring, dynamic attack graph generation, and automated incident response.
 
-The platform simulates the core capabilities found in enterprise security products such as Splunk, Microsoft Sentinel, CrowdStrike, and SentinelOne while remaining lightweight and fully self-hosted.
+The platform simulates core capabilities commonly found in enterprise security solutions such as Splunk, Microsoft Sentinel, CrowdStrike, and SentinelOne while remaining lightweight, transparent, and fully self-hosted.
 
-SentinelIQ ingests security events, enriches them through behavioral analytics, maps activity to MITRE ATT&CK techniques, constructs evolving attack graphs, and triggers autonomous defensive actions.
+SentinelIQ ingests security telemetry, enriches events through behavioral analytics, maps activity to MITRE ATT&CK techniques, builds evolving attack graphs, and triggers autonomous defensive actions.
 
 ---
 
-# Key Capabilities
+## 🚀 Live Deployment
 
-## 🧠 AI-Driven Threat Analysis
+**Public Deployment (Nosana Cloud)**
+
+https://4u8pgm9fagp9ah4al48agqdvwoxypvsvn9rutoeccsvn.node.k8s.prd.nos.ci/docs
+
+The live deployment exposes an interactive Swagger UI where events can be submitted and attack graphs generated in real time.
+
+---
+
+## 🔥 Key Features
+
+### 🧠 AI-Driven Threat Analysis
 
 * User & Entity Behavior Analytics (UEBA)
 * Risk-based scoring engine
 * Login anomaly detection
+* Failed authentication detection
 * Behavioral deviation analysis
 * Threat classification
 
-## 🕸 Dynamic Attack Graph
+### 🕸 Dynamic Attack Graph
 
-* Real-time graph generation
-* User-to-IP relationships
-* Attack path visualization
-* Event correlation chains
-* Weighted edge scoring
+* Real-time node creation
+* User-to-IP relationship mapping
+* Weighted attack paths
+* Attack chain reconstruction
+* Graph summary analytics
+* Relationship tracking
 
-## ⚡ Correlation Engine
+### ⚡ Correlation Engine
 
 * Multi-event attack correlation
 * MITRE ATT&CK mapping
-* Brute force detection
-* Attack chain reconstruction
+* Brute force attack detection
 * Threat confidence scoring
+* Attack escalation analysis
+* Behavioral pattern recognition
 
-## 🚨 Autonomous Response Engine
+### 🚨 Autonomous Response Engine
 
-* Automatic IP blocking
+* Automatic IP blocking simulation
 * User quarantine simulation
-* Rate limiting
 * Escalation workflows
 * Incident memory tracking
+* Risk-based response actions
 
-## 📊 SOC Dashboard
+### 📊 SOC Dashboard
 
 * Real-time monitoring
 * Threat visualization
 * Live graph updates
-* Analyst narrative panel
-* Security operations simulation
+* Security event tracking
+* SOC-style operational interface
 
 ---
 
-# Architecture
+## 🏗 Architecture
 
-Event Stream
-↓
-FastAPI API Layer
-↓
-Risk Engine (UEBA)
-↓
-Correlation Engine
-↓
-Attack Graph Builder
-↓
-Autonomous Response Engine
-↓
-SOC Dashboard
+```text
+Security Events
+       │
+       ▼
+ FastAPI API Layer
+       │
+       ▼
+ UEBA Risk Engine
+       │
+       ▼
+ Correlation Engine
+       │
+       ▼
+ MITRE ATT&CK Mapping
+       │
+       ▼
+ Attack Graph Builder
+       │
+       ▼
+ Autonomous Response Engine
+       │
+       ▼
+ SOC Dashboard
+```
 
 ---
 
-# Example Event
+## 🧪 Example Event
 
 ```json
 {
@@ -87,7 +111,9 @@ SOC Dashboard
 }
 ```
 
-Example Response:
+---
+
+## Example Detection Result
 
 ```json
 {
@@ -98,8 +124,7 @@ Example Response:
 
 ---
 
-
-## Screenshots
+## 📸 Screenshots
 
 ### Live SOC Dashboard
 
@@ -115,26 +140,18 @@ Example Response:
 
 ---
 
-# Running Locally
+## 🐳 Docker Deployment
 
-Clone repository:
+Build the image:
 
 ```bash
-git clone https://github.com/Drechi3/SentinelIQ.git
-
-cd SentinelIQ
+docker build -t sentineliq .
 ```
 
-Install dependencies:
+Run the container:
 
 ```bash
-pip install -r requirements.txt
-```
-
-Run:
-
-```bash
-python -m uvicorn main:app --reload
+docker run -p 8000:8000 sentineliq
 ```
 
 Open:
@@ -145,21 +162,28 @@ http://localhost:8000/docs
 
 ---
 
-# Docker Deployment
+## 💻 Local Installation
 
-Build image:
-
-```bash
-docker build -t sentineliq .
-```
-
-Run container:
+Clone repository:
 
 ```bash
-docker run -p 8000:8000 sentineliq
+git clone https://github.com/Drechi3/SentinelIQ.git
+cd SentinelIQ
 ```
 
-Access:
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run application:
+
+```bash
+python -m uvicorn main:app --reload
+```
+
+Open Swagger UI:
 
 ```text
 http://localhost:8000/docs
@@ -167,51 +191,74 @@ http://localhost:8000/docs
 
 ---
 
-# Example Detection Scenario
+## Example Detection Scenario
 
 1. User repeatedly fails authentication.
 2. Risk score increases.
 3. Correlation engine maps activity to MITRE ATT&CK T1110.
-4. Attack graph expands.
-5. Autonomous response engine blocks attacker.
-6. Incident stored in memory for future analysis.
+4. Attack graph expands dynamically.
+5. Autonomous response engine reacts.
+6. Incident is stored for future analysis.
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```text
 SentinelIQ/
 │
+├── agents/
+├── backend/
+├── frontend/
+├── threat_intel/
+├── alerts/
+├── storage/
+├── tests/
+│
 ├── main.py
-├── risk_engine.py
+├── attack_graph.py
 ├── correlation_engine.py
-├── graph_engine.py
 ├── response_engine.py
+├── ai_risk_engine.py
 ├── dashboard.html
 ├── Dockerfile
 ├── requirements.txt
+│
 └── screenshots/
 ```
 
 ---
 
-# Future Roadmap
+## Roadmap
 
-* LLM-powered SOC analyst
-* Threat intelligence enrichment
-* Multi-user dashboard
-* Graph database integration
-* Vector memory search
-* Cloud-native deployment
-* Kubernetes support
-* Real-time SIEM connectors
+* LLM-Powered SOC Analyst
+* AI Incident Summaries
+* Threat Intelligence Enrichment
+* Multi-Tenant Dashboard
+* Graph Database Integration
+* Vector Memory Search
+* Kubernetes Deployment
+* Cloud SIEM Integrations
+* Real-Time Threat Feeds
 
 ---
 
-# Author
+## Technologies
 
-Igboanugo David Ugochukwu
+* Python 3.12
+* FastAPI
+* Docker
+* HTML/CSS/JavaScript
+* MITRE ATT&CK Framework
+* UEBA Analytics
+* Attack Graph Modeling
+* Nosana Cloud Deployment
+
+---
+
+## Author
+
+**Igboanugo David Ugochukwu**
 
 Cybersecurity Researcher | Technical Writer | Security Engineer
 
@@ -219,7 +266,10 @@ GitHub:
 https://github.com/Drechi3
 
 LinkedIn:
-https://linkedin.com/in/igboanugo-david-ugochukwu-73136220b
+https://www.linkedin.com/in/igboanugo-david-ugochukwu-73136220b
 
 ---
 
+## License
+
+MIT License
