@@ -103,15 +103,15 @@ Example Response:
 
 ### Live SOC Dashboard
 
-![Dashboard](screenshots/Screenshot%202026-06-24%20161937.png)
-
-### Threat Detection API
-
-![API](screenshots/Screenshot%202026-06-24%20162010.png)
+![Dashboard](screenshots/dashboard.png)
 
 ### Attack Graph Visualization
 
-![Graph](screenshots/Screenshot%202026-06-24%20162046.png)
+![Graph](screenshots/graph.png)
+
+### Threat Detection API
+
+![API](screenshots/api.png)
 
 ---
 
